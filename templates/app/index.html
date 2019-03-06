@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <div class="top-bar">
+        <span class="first">
+          <span class="highlight-bar"></span>
+          <a href="" class="selected">首页</a></span>
+        <span class="top_fav">
+          <a href="" target="_blank">提交种子</a></span>
+    </div>
+    <div id="first-content">
+        <div id="center-box-wrapper">
+            <div id="center-box">
+                <div id="center-logo">
+                    <a href="">
+                        <img src="{% static 'img/logo.png' %}" alt="磁力搜索"></a>
+                </div>
+                <div id="search-box">
+                    <form id="search-form" action="" method="post">
+                        <input type="text" id="search" name="s" autocomplete="off" placeholder="搜搜你懂的">
+                        <input type="submit" id="btnSearch" value="搜 索" class="blue"></form>
+                    <div class="info-box">
+                        <ul>
+                            <li>
+                                <a href="">神奇动物</a></li>
+                            <li>
+                            <li>
+                                <a href="">神奇动物</a></li>
+                            <li>
+                            <li>
+                                <a href="">神奇动物</a></li>
+                            <li>
+                            <li>
+                                <a href="">神奇动物</a></li>
+                            <li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="push"></div>
+</div>
+<div class="footer">
+      <span>
+        <a href="" rel="nofollow" target="_blank">联系方式</a>|
+        <a href="">磁力链接</a>|
+        <a href="">磁力搜索</a>|
+        <a href="">种子搜索</a>
+      </span>
+</div>
+<span style="display:none"></span>
+{% endblock content %}
+
