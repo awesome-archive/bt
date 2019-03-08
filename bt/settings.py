@@ -74,17 +74,7 @@ WSGI_APPLICATION = 'bt.wsgi.application'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload').replace('\\','/')
 MEDIA_URL = '/upload/'
 
-# 上传视频最大尺寸
-CHUNKED_UPLOAD_MAX_BYTES = 100000000
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# 邮件配置
-EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtp.163.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'net936@163.com'
-EMAIL_HOST_PASSWORD = 'your pwd'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
