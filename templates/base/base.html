@@ -10,10 +10,10 @@
     <meta name="description" content="专业强大的磁力链接搜索引擎,这里有超过千万的磁力链提供搜索">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="applicable-device" content="pc,mobile">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style_v2.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/layer.css' %}" id="layuicss-layer">
     <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/layer.js' %}"></script>
 </head>
 
 <body>
@@ -21,7 +21,8 @@
 {% block content %}
 {% endblock content %}
 
-<script src="{% static 'js/function-new.js' %}"></script>
+{% include "base/footer.html" %}
+
 <script src="{% static 'js/common-v2.js' %}"></script>
 <script src="{% static 'js/m-detail.js' %}"></script>
 <script src="{% static 'js/clipboard.min.js' %}"></script>

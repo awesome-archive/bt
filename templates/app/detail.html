@@ -4,66 +4,54 @@
 {% block content %}
 <div id="wrapper">
     <div class="top-bar">
-        <span class="first"><a href="">首页</a></span><span class="top_fav"><a
-            href="" target="_blank">提交种子</a></span>
+        <span class="first"><a href="/">首页</a></span><span class="top_fav">
+        <a href="{% url 'app:commit' %}" target="_blank">提交链接</a></span>
     </div>
     <div class="header-div">
-        <form class="search-form" action="" method="post">
-            <a href="" title="磁力搜索" class="fl"><img
-                    src="{% static 'img/logo.png' %}" alt="磁力搜索" class="nav-logo"></a><input
-                type="text" id="search" title="Search" value="" autocomplete="off" name="s" placeholder="请输入关键词"
-                class="fl mt25"><input type="submit" id="btnSearch" value="搜 索" class="blue fl mt25">
+        <form class="search-form"   action="{% url 'app:search' %}" enctype="multipart/form-data" method="get" role="form">
+            <a href="" title="磁力搜索" class="fl">
+                <img src="{% static 'img/logo.png' %}" alt="磁力搜索" class="nav-logo"></a>
+            <input type="text" id="search" title="Search" value="{{q}}"
+                   autocomplete="off" name="q" placeholder="搜搜你懂的" class="fl mt25">
+            <input style="line-height:32px;" type="submit" id="btnSearch" value="搜 索" class=" blue fl mt25">
         </form>
     </div>
     <div id="content">
         <div id="wall">
-            <h1 class="res-title">【重返地球(地球过后)(末日1000年)(后地球时代)】</h1>
+            <h1 class="res-title">{{link.title}}</h1>
             <div class="fileDetail">
                 <p>
-                    <a href="" target="_blank" class="pill">相关搜索</a>
-                    <a href="" target="_blank" class="pill">相关搜索</a>
-                    <a href="" target="_blank" class="pill">相关搜索</a>
+                    {% for item in recommend_list %}
+                    <a href="{% url 'app:search' %}?q={{item.title}}" target="" class="pill">{{item.title}}</a>
+                    {% empty %}
+                    <h3>暂无推荐</h3>
+                    {% endfor %}
                 </p>
                 <p>
-                    种子大小：481.03 Mb
+                    视频大小：{{link.size}}
                 </p>
                 <p>
-                    收录时间：2013-07-26
-                </p>
-                <p class="link_op">
-                    链接操作： <a href="javascript:;" onclick="ajaxp(&#39;good&#39;)">点赞<em id="goodnum">1</em></a><a
-                        href="javascript:;" onclick="report();"><b>违规举报</b></a>
+                    收录时间：{{link.timestamp}}
                 </p>
                 <p>
-                    点击热度：<span id="hits_num">1022</span>
+                    点击热度：<span id="hits_num">{{link.hot}}</span>
                 </p>
                 <p>
-                    资源下载：<a href="magnet:?xt=urn:btih:D031A95669600959165E119B6F1ACB19F74AC0C7" class="download"
+                    资源下载：<a href="{{link.url}}" class="download"
                             id="down-link">磁力链接</a>&nbsp;
-                    <input id="mg-link" value="magnet:?xt=urn:btih:D031A95669600959165E119B6F1ACB19F74AC0C7">
+                    <input id="mg-link" value="{{link.url}}">
                     <a href="javascript:;" id="copyi" data-clipboard-target="#mg-link" class="download">复制链接</a>&nbsp;
-                    <a href="javascript:;" onclick="alert(&#39;暂停使用&#39;);">种子下载</a>&nbsp;
-                    <a href="javascript:;" target="_blank" class="yubo">在线播放</a>&nbsp;
                 </p>
                 <p>
-                    文件列表：
+                    视频简介：
                 </p>
             </div>
             <ol>
-                <li>【After Earth】【DVD-RMVB.中字】.rmvb<span class="cpill blue-pill">481.03 Mb</span></li>
+                {{link.desc}}
             </ol>
             <div class="push">
             </div>
         </div>
     </div>
 </div>
-<div class="footer">
-    <span>
-        <a href="" rel="nofollow" target="_blank">联系方式</a>|
-        <a href="">磁力链接</a>|
-        <a href="">磁力搜索</a>|
-        <a href="">种子搜索</a>
-      </span>>
-</div>
-<span style="display:none"></span>
 {% endblock content %}

@@ -123,10 +123,11 @@ img {
 
 .header-div form a {
 	text-decoration: none;
+	margin: 0px 14px;
 }
 
 .header-div .nav-logo {
-	width: 40px;
+	width: 32px;
 	vertical-align: middle;
 }
 
@@ -134,7 +135,7 @@ img {
 	margin: 0;
 	padding: 4px 7px;
 	width: 68%;
-	height: 22px;
+	height: 32px;
 	max-width: 550px;
 	outline: none;
 	border: 1px solid #b9b9b9;
@@ -267,8 +268,8 @@ img {
 
 #center-logo img {
 	width: 22%;
-	max-width:200px;
-	min-width: 100px;
+	max-width:120px;
+	min-width: 90px;
 	-moz-min-width: 100px;
 	-ms-min-width: 100px;
 	-o-min-width: 100px;
@@ -380,7 +381,7 @@ input[type=submit].blue:active {
 	margin: 0;
 	padding: 4px 7px!important;
 	width: 520px;
-	height: 22px;
+	height: 32px;
 	outline: none;
 	border: 1px solid #dadada;
 	background-color: #fff;
