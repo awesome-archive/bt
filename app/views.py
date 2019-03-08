@@ -19,8 +19,9 @@ class SearchView(generic.ListView):
     template_name = 'app/search.html'
     context_object_name = 'link_list'
     paginate_by = 10
-    q = ''       # 搜索
+    q = ''       # 搜索词
     duration = 0 # 耗时
+    record_count = 0
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(SearchView, self).get_context_data(**kwargs)
@@ -30,6 +31,7 @@ class SearchView(generic.ListView):
         context['page_list'] = page_list
         context['q'] = self.q
         context['duration'] = round(self.duration,6)
+        context['record_count'] = self.record_count
         return context
 
     def get_queryset(self):
@@ -41,6 +43,7 @@ class SearchView(generic.ListView):
             search_list = Link.objects.get_fake_list()
         end = time.time()
         self.duration = end - start
+        self.record_count = len(search_list)
         return search_list
 
 class DetailView(generic.DetailView):
