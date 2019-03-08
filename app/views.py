@@ -73,5 +73,5 @@ class CommitView(generic.CreateView):
         return super().post(request, *args, **kwargs)
 
     def get_success_url(self):
-        messages.success(self.request, "提交成功")
+        messages.success(self.request, "提交成功! 审核期3个工作日。")
         return reverse('app:commit')

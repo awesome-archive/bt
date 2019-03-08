@@ -31,7 +31,7 @@ class Link(models.Model):
     objects = LinkQuerySet.as_manager()
 
     def __str__(self):
-        return self.url
+        return self.title
 
     class Meta:
         db_table = "bt_link"
