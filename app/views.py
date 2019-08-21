@@ -78,3 +78,6 @@ class CommitView(generic.CreateView):
     def get_success_url(self):
         messages.success(self.request, "提交成功! 审核期3个工作日。")
         return reverse('app:commit')
+
+class DemoView(generic.TemplateView):
+    template_name = 'app/demo.html'
