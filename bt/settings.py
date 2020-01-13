@@ -25,7 +25,7 @@ SECRET_KEY = '_wv6!y^1wu+iru%j1kzmgs-$#@)a#$sf=mm6gmwih%uyd#p#lf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bt.mypython.me','127.0.0.1']
+ALLOWED_HOSTS = ['bt.mypython.me','127.0.0.1','192.168.56.1','192.168.43.158']
 
 
 # Application definition
